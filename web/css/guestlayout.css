@@ -1,0 +1,11 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 23, 2018, 8:15:21 AM
+    Author     : Mohammad Junaid
+*/
+
+#main-content{padding:5px 0}#header{height:85px}#header .logo{float:left;margin:10px 10px 0;}#lang_navguest{float:right;padding-top:5px}#nav{height:35px;text-align:left}#nav ul{display:block;float:left;padding:6px 0 0 15px;width:600px;list-style:none}#nav li{display:inline}#nav li a:link,#nav li a:visited{padding:0 2px;text-decoration:none;font-weight:700;font-size:11px;line-height:20px}#login-box{float:right;position:relative;margin:30px 30px 0 0;width:250px}#login-box em{display:block;font-weight:700;padding-left:15px}.cm-logo{float:right;padding:29px 0 0}#login{padding:5px 0 0;text-align:left}#login label{float:left;margin-top:5px}#login .text{margin:0 5px;width:50px;font-size:12px}.memlogin{-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;width:245px;position:absolute;height:25px;top:0;left:0;bottom:0;right:0}.memlogin-text{position:relative;z-index:1;padding:0 15px}.memlogin-text span{float:left;padding:7px 0 0;width:auto;font-weight:700}.memlogin-text a:link,.memlogin-text a:visited{display:block;float:right;font-size:12px;font-weight:700;padding:7px 0 0;text-decoration:underline;width:auto}a{cursor:pointer;_position:relative}input{margin-bottom:2px;cursor:text;_position:relative}#footer{clear:both;height:30px;text-align:center;font:10px Verdana, Geneva, sans-serif}#footer a:link,#footer a:visited{padding:0 3px;text-decoration:none;font-weight:400;font-size:10px}#footer p{padding:5px 0}#trademark{text-align:center;font-style:normal}#trademark p{padding:0 5px 5px;font:10px Verdana, Geneva, sans-serif;line-height:1.5em}#confirmation{margin:10px;padding:20px;text-align:center}#confirmation h1{display:block;margin-bottom:10px;font-size:17px}#confirmation h2{display:block;margin:20px 0 15px;padding-top:20px;font-size:12px}@media only all and (min-device-width: 768px) and (max-device-width: 1024px){#lang_navguest{float:left;padding-left:30px}}
