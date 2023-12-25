@@ -115,8 +115,7 @@ class SiteController extends Controller
         }
         if (Yii::$app->request->post()) {
             
-            \Stripe\Stripe::setApiKey('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');
-//            \Stripe\Stripe::setApiKey('sk_test_moUXZxZUK86HtAMPS7yflHD300AigMYh4x');
+
 
             $token = $_POST['stripeToken'];
 
