@@ -194,9 +194,7 @@ class ApiController extends Controller {
 
             // Set your secret key. Remember to switch to your live secret key in production.
             // See your keys here: https://dashboard.stripe.com/apikeys
-//            \Stripe\Stripe::setApiKey('pk_test_M0oqDuKsuy80UAfOVKAH9YXS00d94eJaX4');
-//            $stripe = new \Stripe\StripeClient('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');
-            $stripe = new \Stripe\StripeClient('sk_test_moUXZxZUK86HtAMPS7yflHD300AigMYh4x');
+
 
             $charge = $stripe->paymentIntents->create([
                 'amount' => $post['amount'] * 100,
@@ -222,20 +220,7 @@ class ApiController extends Controller {
                 $model->email = $post['shipping_info']['email'];
                 if ($model->save()) {
 
-                    $message = Yii::$app->mailer->compose(['html' => '@app/mail/views/order'], ['model' => $model, 'order_info' => $post['order_info'], 'shipping_info' => $post['shipping_info']]); // pass model to view);
-                    $message->setTo($model->email);
-                    $message->setSubject('Pakiya Order Confirmation');
-                    $message->send();
-
-                    $message = Yii::$app->mailer->compose(['html' => '@app/mail/views/order'], ['model' => $model, 'order_info' => $post['order_info'], 'shipping_info' => $post['shipping_info']]); // pass model to view);
-                    $message->setTo('mohammadjunaid538@gmail.com');
-                    $message->setSubject('Pakiya Order Confirmation');
-                    $message->send();
-
-                    $message = Yii::$app->mailer->compose(['html' => '@app/mail/views/order'], ['model' => $model, 'order_info' => $post['order_info'], 'shipping_info' => $post['shipping_info']]); // pass model to view);
-                    $message->setTo('info@packiya.com');
-                    $message->setSubject('Pakiya Order Confirmation');
-                    $message->send();
+                    
 
                     $data['success'] = true;
                 }
@@ -253,43 +238,13 @@ class ApiController extends Controller {
         if ($post) {
             $model->attributes = $post;
             if ($model->save()) {
-
-
-                $message = Yii::$app->mailer->compose(['html' => '@app/mail/views/quote'], ['model' => $model]); // pass model to view);
-                $message->setTo('mohammadjunaid538@gmail.com');
-                $message->setSubject('Pakiya Order Confirmation');
-                $message->send();
-
-                $message = Yii::$app->mailer->compose(['html' => '@app/mail/views/quote'], ['model' => $model]); // pass model to view);
-                $message->setTo('info@packiya.com');
-                $message->setSubject('Pakiya Order Confirmation');
-                $message->send();
-
                 $data['success'] = true;
             }
         }
         return $data;
     }
     
-    public function actionSaveContactForm() {
-        $post = json_decode(file_get_contents("php://input"), true);
-        $data['success'] = false;
-        Yii::$app->response->format = Response::FORMAT_JSON;
-        if ($post) {
-            $message = Yii::$app->mailer->compose(['html' => '@app/mail/views/contact'], ['model' => $post]); // pass model to view);
-            $message->setTo('mohammadjunaid538@gmail.com');
-            $message->setSubject('New Contact');
-            $message->send();
-
-            $message = Yii::$app->mailer->compose(['html' => '@app/mail/views/contact'], ['model' => $post]); // pass model to view);
-            $message->setTo('info@packiya.com');
-            $message->setSubject('New Contact');
-            $message->send();
-
-            $data['success'] = true;
-        }
-        return $data;
-    }
+    
     
     public function actionCategoriesList($slug = '') {
 //        $p_data = file_get_contents("php://input");
